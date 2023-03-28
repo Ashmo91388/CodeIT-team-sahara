@@ -16,9 +16,18 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    username: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    user_avatar: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: 'https://img.icons8.com/ios_filled/12x/user.png'
+    },
+    github: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     email: {
       type: DataTypes.STRING,
