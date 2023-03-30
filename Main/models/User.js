@@ -25,10 +25,10 @@ User.init(
       allowNull: true,
       defaultValue: 'https://img.icons8.com/ios_filled/12x/user.png'
     },
-    github: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
+    // github: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    // },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
