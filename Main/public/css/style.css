@@ -17,8 +17,8 @@ header, .project:not(:last-child) {
   text-decoration: underline;
 }
 
-.dollar-amount {
-  color: #056605;
+.likes {
+  color: red;
   font-weight: bold;
   margin-left: -5px;
 }
