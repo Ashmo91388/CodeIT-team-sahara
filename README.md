@@ -19,6 +19,6 @@ GitHub
 - Lanz DImacali
 
 ## Demo :camera:
-![codeit homepage](./Main/public/images/Screen%20Shot%202023-03-30%20at%2010.47.53%20PM.png")
+![codeit homepage]("./Main/public/images/Screen%20Shot%202023-03-30%20at%2010.47.53%20PM.png")
 
-![landing page](./Main/public/images/landing%20page.png.png")
+![landing page]("./Main/public/images/landing%20page.png.png")
