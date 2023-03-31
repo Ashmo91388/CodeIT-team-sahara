@@ -1,14 +1,14 @@
 <div>
-  <img src="" alt="current user avatar">
+  <img src="{{user.user_avatar}}" style='width: 40px' alt="current user avatar">
 </div>
 <div class="col-md-6">
-    <h3>Create a New Project:</h3>
+    
 
-    <form class="form new-project-form">
+    <form class="form new-post-form">
       <div class="form-group">
-        <label for="project-name">project name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
-        <button type="submit" class="btn btn-primary">Create</button>
+        <label for="project-name">Make a new post:</label>
+        <input class="form-input" type="text" id="post-content" name="project-name" />
+        <button type="submit" class="btn btn-primary">Post</button>
       </div>
     </form>
   </div>
@@ -16,14 +16,17 @@
   {{#each posts}} 
     <div class="post">
       <div class="post-toprow">
-        <img src="{{this.user_avatar}}" alt="author avatar"> 
-        <span>{{this.username}}</span>
+        <img src="{{this.user.user_avatar}}" style='width: 20px' alt="author avatar"> 
+        <span>{{this.user.username}}</span>
       </div>
       <p>{{this.content}}</p>
       {{#if this.image}}
         <img src="{{this.image}}" alt="post image">
       {{/if}}
       <p>{{this.date_created}}</p>
+      <button id='{{this.id}}' onclick="handleLike(event)">Like</button>
     </div>
   {{/each}}
 </div>
+
+<script src="./js/home.js"></script>

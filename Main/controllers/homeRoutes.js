@@ -75,19 +75,24 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/profile', async (req, res) => {
+router.get('/profile', withAuth, async (req, res) => {
   const userData = await User.findByPk(req.session.user_id, {
     attributes: { exclude: ['password'] },
   });
 
   const user = userData.get({ plain: true });
   const postData = await Post.findAll({
+    include: {
+      model: User,
+      attributes: ["username", "user_avatar"]
+    },
     where: {user_id: user.id}
   });
   const posts = postData.map((post) => post.get({ plain: true }));
   res.render('profile', {
     user: user, 
-    posts: posts
+    posts: posts,
+    logged_in: true
   })
 }) 
 module.exports = router;
