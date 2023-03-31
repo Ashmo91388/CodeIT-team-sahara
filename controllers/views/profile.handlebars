@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-auto">
+    <img src="{{user.user_avatar}}" alt="current user avatar">
+  </div>
+</div>
+<div class="row">
+  <p class="mr-3">{{user.username}}</p> |
+  <p class="mr-3 ml-3">GitHub: {{user.github}}</p> |
+  <p class="ml-3">email: {{user.email}}</p>
+</div>
+<div class="row mt-4">
+  
+
+  {{#if posts.length}}
+  <div class="col-md-6 project-list">
+    <h3>{{user.username}}'s posts:</h3>
+
+    {{#each posts}}
+    <div class="row mb-2">
+      <div class="post">
+      <div class="post-toprow">
+        <img src="{{this.user.user_avatar}}" style="width: 20px" alt="author avatar"> 
+        <span>{{this.user.username}}</span>
+      </div>
+      <p>{{this.content}}</p>
+      {{#if this.image}}
+        <img src="{{this.image}}" alt="post image">
+      {{/if}}
+      <p>{{this.date_created}}</p>
+    </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>
