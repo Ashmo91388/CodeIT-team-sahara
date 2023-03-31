@@ -67,12 +67,24 @@ router.get('/home', withAuth, async (req, res) => {
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/home');
-    return;
-  }
+  // if (req.session.logged_in) {
+  //   res.redirect('/home');
+  //   return;
+  // }
 
   res.render('login');
+});
+
+router.post('/signup', async (req, res) => {
+try{
+const data = req.body;
+console.log(data); //for testing purposes 
+await db.User.create(data);
+res.redirect('/login');
+
+} catch(err){
+  res.status(500).json(err)
+}
 });
 
 router.get('/profile', withAuth, async (req, res) => {
