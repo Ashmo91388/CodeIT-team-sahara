@@ -4,6 +4,7 @@ header, .project:not(:last-child) {
 
 body {
 background-color: #3A506b;
+color: white;
 
 }
 .no-button {
